@@ -9,6 +9,9 @@ function App() {
         <p>
           hepoblet.github.io
         </p>
+        <p>
+          v1.0.1
+        </p>
         <a
           className="App-link"
           href="https://reactjs.org"
