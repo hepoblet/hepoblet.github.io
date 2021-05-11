@@ -1,12 +1,13 @@
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './routes';
 import SideTop from './layouts/SideTop';
-import Home from './pages/Home';
 
-function App() {
-  return (
+const App = () => (
+  <BrowserRouter>
     <SideTop>
-      <Home />
+      <Routes />
     </SideTop>
-  );
-}
+  </BrowserRouter>
+);
 
 export default App;
