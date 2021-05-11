@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders github text', () => {
   render(<App />);
-  const linkElement = screen.getByText(/github/i);
-  expect(linkElement).toBeInTheDocument();
+  const textElement = screen.getByText(/github/i);
+  expect(textElement).toBeInTheDocument();
 });
 
 test('renders hepoblet text', () => {
