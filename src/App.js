@@ -1,13 +1,13 @@
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './routes';
-import SideTop from './layouts/SideTop';
+import Layout from './layouts/SideTop';
 
 const App = () => (
-  <BrowserRouter>
-    <SideTop>
+  <Router>
+    <Layout>
       <Routes />
-    </SideTop>
-  </BrowserRouter>
+    </Layout>
+  </Router>
 );
 
 export default App;
