@@ -421,8 +421,17 @@ module.exports = function (webpackEnv) {
                     },
                   ],
                   isEnvDevelopment &&
-                    shouldUseReactRefresh &&
-                    require.resolve('react-refresh/babel'),
+                  shouldUseReactRefresh &&
+                  require.resolve('react-refresh/babel'),
+                  ['module-resolver', {
+                    root: paths.appSrc,
+                    alias: {
+                      '@layouts': './src/layouts',
+                      '@pages': './src/pages',
+                      '@routes': './src/routes',
+                    },
+                    extensions: ['.ios.js', '.android.js', '.js', '.json'],
+                  }],
                 ].filter(Boolean),
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
                 // It enables caching results in ./node_modules/.cache/babel-loader/

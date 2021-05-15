@@ -1,3 +1,5 @@
+const { version } = require('../../../package.json');
+
 const Home = () => (
   <div>
     <div>Home</div>
@@ -6,7 +8,8 @@ const Home = () => (
         hepoblet.github.io
       </p>
       <p>
-        v1.0.1
+        v
+        {version}
       </p>
     </div>
   </div>
