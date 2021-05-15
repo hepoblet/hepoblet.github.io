@@ -1,5 +1,10 @@
-.site-layout-background {
+.container {
+  height: 100vh;
+}
+
+.content {
   background: #fff;
+  padding: 30px;
 }
 
 .logo-container {
@@ -8,7 +13,7 @@
 }
 
 .logo {
-  max-height: 65px;
+  max-height: 62px;
   pointer-events: none;
 }
 
