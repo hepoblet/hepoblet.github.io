@@ -1,17 +1,10 @@
-const { version } = require('../../../package.json');
+import { Col } from 'antd';
 
 const Home = () => (
   <div>
-    <div>Home</div>
-    <div>
-      <p>
-        hepoblet.github.io
-      </p>
-      <p>
-        v
-        {version}
-      </p>
-    </div>
+    <Col span={24}>
+      hepoblet.github.io
+    </Col>
   </div>
 );
 

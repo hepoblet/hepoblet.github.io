@@ -1,11 +1,10 @@
+import { Col } from 'antd';
+
 const Contact = () => (
   <div>
-    <div>Contact</div>
-    <div>
-      <p>
-        ...
-      </p>
-    </div>
+    <Col span={24}>
+      hepoblet@gmail.com
+    </Col>
   </div>
 );
 
