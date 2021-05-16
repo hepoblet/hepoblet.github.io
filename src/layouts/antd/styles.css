@@ -9,11 +9,10 @@ code {
 }
 
 .container {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .content {
-  background: #fff;
   padding: 30px;
 }
 
@@ -52,4 +51,19 @@ code {
 
 .text-center {
   text-align: center;
+}
+
+.icon-back-top {
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  font-size: 40px;
+  color: #1a90ff;
+  text-align: 'center';
+}
+
+.home-content, .home-content {
+  background-color: #fff;
+  min-height: 250px;
+  padding: 20px 35px;
 }

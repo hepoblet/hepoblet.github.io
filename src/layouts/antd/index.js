@@ -1,7 +1,8 @@
 import 'antd/dist/antd.css';
 import './styles.css';
 import { element } from 'prop-types';
-import { Layout } from 'antd';
+import { Layout, BackTop } from 'antd';
+import { UpCircleFilled } from '@ant-design/icons';
 
 import Header from './components/Header';
 import Content from './components/Content';
@@ -10,10 +11,11 @@ import Footer from './components/Footer';
 const AntDesignLayout = ({ children }) => (
   <Layout className="container">
     <Header />
-    <Layout>
-      <Content>{children}</Content>
-    </Layout>
+    <Content>{children}</Content>
     <Footer />
+    <BackTop>
+      <UpCircleFilled className="icon-back-top" />
+    </BackTop>
   </Layout>
 );
 
