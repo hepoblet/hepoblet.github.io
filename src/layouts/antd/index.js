@@ -1,5 +1,4 @@
-import 'antd/dist/antd.css';
-import './styles.css';
+import './styles.less';
 import { element } from 'prop-types';
 import { Layout } from 'antd';
 
