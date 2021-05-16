@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <Layout.Footer>
-      <Row>
+      <Row className="container">
         <Col className="text-left" span={12}>{t('description')}</Col>
         <Col className="text-right" span={12}>
           v

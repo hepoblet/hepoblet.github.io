@@ -1,19 +1,45 @@
-import { Row, Col, Progress } from 'antd';
+import {
+  Row, Col, Card, Progress, Avatar,
+} from 'antd';
+import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
+
+import photo from '@assets/photo.jpg';
 
 const Home = () => (
-  <Row>
-    <Col className="home-content" span={24} lg={6}>
-      <Progress percent={30} />
-      <Progress percent={50} status="active" />
-      <Progress percent={60} status="active" />
-      <Progress percent={50} status="active" />
-      <Progress percent={70} status="exception" />
-      <Progress percent={100} />
-      <Progress percent={50} showInfo={false} />
+  <Row className="container content">
+    <Col span={24} lg={5}>
+      <Card
+        cover={(
+          <img
+            alt="img"
+            src={photo}
+          />
+        )}
+        title="Skills"
+        bordered={false}
+        actions={[
+          <SettingOutlined key="setting" />,
+          <EditOutlined key="edit" />,
+          <EllipsisOutlined key="ellipsis" />,
+        ]}
+      >
+        <Card.Meta
+          avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+          title="Card title"
+          description="This is the description"
+        />
+        <Row>
+          <Progress percent={50} status="active" showInfo={false} />
+          <Progress percent={75} status="active" showInfo={false} />
+          <Progress percent={100} status="active" showInfo={false} />
+        </Row>
+      </Card>
     </Col>
-    <Col span={24} lg={2} />
-    <Col className="home-content" span={24} lg={16}>
-      hepoblet.github.io
+    <Col span={24} lg={1} />
+    <Col span={24} lg={18}>
+      <Card title="Info" bordered={false}>
+        hepoblet.github.io
+      </Card>
     </Col>
   </Row>
 );

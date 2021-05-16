@@ -8,8 +8,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-.container {
+.layout {
   min-height: 100vh;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
 }
 
 .content {
@@ -60,10 +65,4 @@ code {
   font-size: 40px;
   color: #1a90ff;
   text-align: 'center';
-}
-
-.home-content, .home-content {
-  background-color: #fff;
-  min-height: 250px;
-  padding: 20px 35px;
 }

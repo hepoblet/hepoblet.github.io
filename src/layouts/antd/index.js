@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 import BackTop from './components/BackTop';
 
 const AntDesignLayout = ({ children }) => (
-  <Layout className="container">
+  <Layout className="layout">
     <Header />
     <Content>{children}</Content>
     <Footer />

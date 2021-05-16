@@ -2,7 +2,7 @@ import { Layout } from 'antd';
 import { element } from 'prop-types';
 
 const Content = ({ children }) => (
-  <Layout.Content className="content">
+  <Layout.Content>
     {children}
   </Layout.Content>
 );

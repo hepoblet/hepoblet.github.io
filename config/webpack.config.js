@@ -426,6 +426,7 @@ module.exports = function (webpackEnv) {
                   ['module-resolver', {
                     root: paths.appSrc,
                     alias: {
+                      '@assets': './src/assets',
                       '@config': './src/config',
                       '@layouts': './src/layouts',
                       '@pages': './src/pages',
