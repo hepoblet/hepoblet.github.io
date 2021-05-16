@@ -1,7 +1,9 @@
 import {
-  Card, Avatar, Row, Col,
+  Card, Row, Col,
 } from 'antd';
-import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
+import {
+  LinkedinFilled, GithubFilled, MailFilled,
+} from '@ant-design/icons';
 
 import photo from '@assets/photo.jpg';
 
@@ -9,7 +11,6 @@ const Home = () => (
   <Row className="container content">
     <Col span={24} lg={5}>
       <Card
-        title="Skills"
         cover={(
           <img
             alt="img"
@@ -17,16 +18,30 @@ const Home = () => (
           />
         )}
         actions={[
-          <SettingOutlined key="setting" />,
-          <EditOutlined key="edit" />,
-          <EllipsisOutlined key="ellipsis" />,
+          <LinkedinFilled
+            key="linkedin"
+            onClick={() => {
+              window.location.href = 'https://www.linkedin.com/in/hepoblet/';
+            }}
+          />,
+          <GithubFilled
+            key="github"
+            onClick={() => {
+              window.location.href = 'https://github.com/hepoblet/';
+            }}
+          />,
+          <MailFilled
+            key="email"
+            onClick={() => {
+              window.location.href = 'mailto:hepoblet@gmail.com';
+            }}
+          />,
         ]}
         bordered
       >
         <Card.Meta
-          title="Card title"
+          title="Profile"
           description="This is the description"
-          avatar={<Avatar src={photo} />}
         />
       </Card>
     </Col>

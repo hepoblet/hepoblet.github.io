@@ -55,7 +55,7 @@ const Header = () => {
               ghost
               icon={<GithubOutlined />}
               onClick={() => {
-                window.location = 'https://github.com/hepoblet/hepoblet.github.io';
+                window.location.href = 'https://github.com/hepoblet/hepoblet.github.io';
               }}
             >
               {t('source')}
