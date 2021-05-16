@@ -1,7 +1,9 @@
 import {
   Layout, Menu, Button, Row, Col, Space,
 } from 'antd';
-import { GithubOutlined, TranslationOutlined } from '@ant-design/icons';
+import {
+  GithubOutlined, TranslationOutlined, HomeFilled, FormOutlined,
+} from '@ant-design/icons';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -25,12 +27,12 @@ const Header = () => {
             <img src={logo} className="logo" alt="logo" />
           </div>
           <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['/']} selectedKeys={[location.pathname]}>
-            <Menu.Item key="/">
+            <Menu.Item key="/" icon={<HomeFilled />}>
               <Link to="/">
                 {t('home')}
               </Link>
             </Menu.Item>
-            <Menu.Item key="/contact">
+            <Menu.Item key="/contact" icon={<FormOutlined />}>
               <Link to="/contact">
                 {t('contact')}
               </Link>
