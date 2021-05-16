@@ -22,7 +22,7 @@ describe('basic test', () => {
 
   test('renders hepoblet text', () => {
     render(<App />);
-    const textElement = screen.getByText(/hepoblet/i);
-    expect(textElement).toBeInTheDocument();
+    const textElement = screen.getAllByText(/hepoblet/i);
+    expect(textElement[0]).toBeInTheDocument();
   });
 });

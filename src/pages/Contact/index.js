@@ -1,9 +1,14 @@
-import { Row, Col } from 'antd';
+import { Card, Row, Col } from 'antd';
 
 const Contact = () => (
-  <Row>
-    <Col span={24}>
-      hepoblet@gmail.com
+  <Row className="container content">
+    <Col span={24} lg={24}>
+      <Card
+        title="Info"
+        bordered
+      >
+        hepoblet@gmail.com
+      </Card>
     </Col>
   </Row>
 );

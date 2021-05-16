@@ -1,6 +1,7 @@
 import {
-  Layout, Menu, Button, Row,
+  Layout, Menu, Button, Row, Col, Space,
 } from 'antd';
+import { GithubOutlined, TranslationOutlined } from '@ant-design/icons';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -17,39 +18,50 @@ const Header = () => {
   };
 
   return (
-    <Layout.Header>
+    <Layout.Header className="header">
       <Row className="container">
-        <div className="logo-container">
-          <img src={logo} className="logo" alt="logo" />
-        </div>
-        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['/']} selectedKeys={[location.pathname]}>
-          <Menu.Item key="/">
-            <Link to="/">
-              {t('home')}
-            </Link>
-          </Menu.Item>
-          <Menu.Item key="/contact">
-            <Link to="/contact">
-              {t('contact')}
-            </Link>
-          </Menu.Item>
-          <Menu.Item>
-            <Button onClick={() => {
-              switchLang();
-            }}
+        <Col span={24} lg={12} align="left">
+          <div className="logo-container">
+            <img src={logo} className="logo" alt="logo" />
+          </div>
+          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['/']} selectedKeys={[location.pathname]}>
+            <Menu.Item key="/">
+              <Link to="/">
+                {t('home')}
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="/contact">
+              <Link to="/contact">
+                {t('contact')}
+              </Link>
+            </Menu.Item>
+          </Menu>
+        </Col>
+        <Col span={24} lg={12} align="right">
+          <Space>
+            <Button
+              type="primary"
+              size="large"
+              icon={<TranslationOutlined />}
+              onClick={() => {
+                switchLang();
+              }}
             >
               {t('language')}
             </Button>
-          </Menu.Item>
-          <Menu.Item>
-            <Button onClick={() => {
-              window.location = 'https://github.com/hepoblet/hepoblet.github.io';
-            }}
+            <Button
+              type="ghost"
+              size="large"
+              ghost
+              icon={<GithubOutlined />}
+              onClick={() => {
+                window.location = 'https://github.com/hepoblet/hepoblet.github.io';
+              }}
             >
               {t('source')}
             </Button>
-          </Menu.Item>
-        </Menu>
+          </Space>
+        </Col>
       </Row>
     </Layout.Header>
   );
