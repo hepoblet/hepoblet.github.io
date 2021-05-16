@@ -1,11 +1,11 @@
-import { Col } from 'antd';
+import { Row, Col } from 'antd';
 
 const Home = () => (
-  <div>
+  <Row>
     <Col span={24}>
       hepoblet.github.io
     </Col>
-  </div>
+  </Row>
 );
 
 export default Home;

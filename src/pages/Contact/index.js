@@ -1,11 +1,11 @@
-import { Col } from 'antd';
+import { Row, Col } from 'antd';
 
 const Contact = () => (
-  <div>
+  <Row>
     <Col span={24}>
       hepoblet@gmail.com
     </Col>
-  </div>
+  </Row>
 );
 
 export default Contact;
