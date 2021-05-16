@@ -1,3 +1,13 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Ubuntu', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: sgrayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
 .container {
   height: 100vh;
 }
