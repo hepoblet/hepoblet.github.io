@@ -6,6 +6,7 @@
 * https://github.com/typicode/husky
 * https://github.com/okonet/lint-staged
 * https://reactrouter.com
+* https://www.i18next.com
 
 # Scripts
 ```
