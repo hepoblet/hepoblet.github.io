@@ -17,7 +17,7 @@ const ContactForm = () => {
     setLoading(true);
   };
 
-  const onFinishError = () => {};
+  const validateResponse = (res) => res?.ok || res?.name;
 
   useEffect(() => {
     async function submitForm() {
@@ -36,13 +36,13 @@ const ContactForm = () => {
         })
           .then((res) => res.json())
           .then((res) => {
-            if (res?.ok || res?.email) form.current.resetFields();
+            if (validateResponse(res)) form.current.resetFields();
             setResponse(res);
             setLoading(false);
           });
       } catch (e) {
         setLoading(false);
-        // console.log(e);
+        setResponse(e);
       }
     }
     if (loading) submitForm();
@@ -62,7 +62,6 @@ const ContactForm = () => {
         scrollToFirstError
         initialValues={{ name: '', email: '', message: '' }}
         onFinish={onFinish}
-        onFinishFailed={onFinishError}
       >
         <Form.Item
           label="Name"
@@ -101,8 +100,8 @@ const ContactForm = () => {
       <Alert
         showIcon
         closable
-        type={response?.ok ? 'success' : 'error'}
-        message={response?.ok ? 'Thank you! The form was sent successfully.' : 'The form could not be sent, please try again.'}
+        type={validateResponse(response) ? 'success' : 'error'}
+        message={validateResponse(response) ? 'Thank you! The form was sent successfully.' : 'The form could not be sent, please try again.'}
         action={(
           <Button size="small" type="text" />
         )}
