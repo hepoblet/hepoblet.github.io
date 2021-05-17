@@ -38,6 +38,6 @@ jobs:
         name: 'hepoblet'
         email: 'hepoblet@gmail.com'
         actor: 'hepoblet'
-        token: '${{ secrets.GH_PAGES_SECRET }}'
+        token: '${{ secrets.GITHUB_SECRET }}'
     - name: Deploying
       run: npm run deploy -- --branch 'gh-pages'
