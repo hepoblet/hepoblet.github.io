@@ -1,4 +1,4 @@
-import { useState, createRef } from 'react';
+import { useState, useEffect, createRef } from 'react';
 import {
   Alert, Card, Form, Input, Button,
 } from 'antd';
@@ -6,25 +6,40 @@ import ReCAPTCHA from 'react-google-recaptcha';
 
 const ContactForm = () => {
   const [response, setResponse] = useState(null);
+  const [loading, setLoading] = useState(false);
   const recaptchaRef = createRef();
   const form = createRef();
 
-  const onFinish = async (values) => {
-    form.current.resetFields();
-    const token = await recaptchaRef.current.executeAsync();
-
-    fetch('https://formspree.io/f/mvodkbbl', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...values, 'g-recaptcha-response': token }),
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        setResponse(res);
-      });
+  const onFinish = () => {
+    setLoading(true);
   };
 
   const onFinishError = () => {};
+
+  useEffect(() => {
+    async function submitForm() {
+      const values = form.current.getFieldsValue();
+
+      try {
+        const token = await recaptchaRef.current.executeAsync();
+
+        fetch('https://formspree.io/f/mvodkbbl', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ...values, 'g-recaptcha-response': token }),
+        })
+          .then((res) => res.json())
+          .then((res) => {
+            form.current.resetFields();
+            setResponse(res);
+            setLoading(false);
+          });
+      } catch (e) {
+        // console.log(e);
+      }
+    }
+    if (loading) submitForm();
+  }, [loading]);
 
   return (
     <Card
@@ -69,7 +84,7 @@ const ContactForm = () => {
           sitekey="6Le53NcaAAAAAIjRwPKKM18-i_xzqgTc2AItuUSA"
         />
         <Form.Item wrapperCol={{ offset: 4, span: 20 }}>
-          <Button type="primary" htmlType="submit">
+          <Button type="primary" htmlType="submit" loading={loading}>
             Submit
           </Button>
         </Form.Item>
@@ -84,7 +99,7 @@ const ContactForm = () => {
         action={(
           <Button size="small" type="text" />
         )}
-        onClose={setResponse(null)}
+        onClose={() => setResponse(null)}
       />
       )}
     </Card>
