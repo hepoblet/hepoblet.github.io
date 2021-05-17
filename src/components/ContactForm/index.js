@@ -30,7 +30,7 @@ const ContactForm = () => {
         })
           .then((res) => res.json())
           .then((res) => {
-            if (response?.ok) form.current.resetFields();
+            if (res?.ok) form.current.resetFields();
             setResponse(res);
             setLoading(false);
           });
