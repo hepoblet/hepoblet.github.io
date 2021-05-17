@@ -34,7 +34,12 @@ const ContactForm = () => {
           },
           body: JSON.stringify({ ...values, 'g-recaptcha-response': token }),
         })
-          .then((res) => res.json())
+          .then((res) => {
+            if (res?.ok) return res.json();
+            setLoading(false);
+            setResponse('error');
+            throw new Error('Something went wrong.');
+          })
           .then((res) => {
             if (validateResponse(res)) form.current.resetFields();
             setResponse(res);
