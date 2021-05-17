@@ -40,4 +40,7 @@ jobs:
     - name: Building
       run: npm run build --if-present
     - name: Deploying
-      run: npm run deploy -- --branch 'gh-pages'
+      run: |
+        git config --global user.name "hepoblet"
+        git config --global user.email "hepoblet@gmail.com"
+        npm run deploy -- --branch 'gh-pages'
