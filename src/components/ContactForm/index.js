@@ -4,8 +4,8 @@ import {
 } from 'antd';
 import ReCAPTCHA from 'react-google-recaptcha';
 
-// const CONTACT_FORM_URL = 'https://formspree.io/f/mvodkbbl';
-const CONTACT_FORM_URL = 'https://submit-form.com/3K2B92dB';
+const CONTACT_FORM_URL = 'https://formspree.io/f/mvodkbbl';
+// const CONTACT_FORM_URL = 'https://submit-form.com/3K2B92dB';
 
 const ContactForm = () => {
   const [response, setResponse] = useState(null);
@@ -35,10 +35,12 @@ const ContactForm = () => {
           body: JSON.stringify({ ...values, 'g-recaptcha-response': token }),
         })
           .then((res) => {
-            if (res?.ok) return res.json();
-            setLoading(false);
-            setResponse('error');
-            throw new Error('Something went wrong.');
+            if (!res?.ok) {
+              setLoading(false);
+              setResponse('error');
+              throw new Error('Something went wrong.');
+            }
+            return res.json();
           })
           .then((res) => {
             if (validateResponse(res)) form.current.resetFields();
