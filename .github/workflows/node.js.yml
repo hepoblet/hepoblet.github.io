@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x]
+        node-version: [15.x]
 
     steps:
     - name: Checkout
@@ -25,11 +25,13 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Installing dependencies
+    - name: Install Dependencies
       run: npm install
     - name: Testing
       run: npm test
     - name: Building
       run: npm run build --if-present
+    - name: Configure Git
+      run: git config --global user.email "hepoblet@gmail.com" && git config --global user.name "hepoblet"
     - name: Deploying
       run: npm run deploy -- --branch 'gh-pages'
