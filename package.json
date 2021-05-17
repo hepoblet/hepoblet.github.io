@@ -82,7 +82,7 @@
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
       "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
     ],
-    "testRunner": "/Users/hepoblet/Desktop/hepoblet.github.io/node_modules/jest-circus/runner.js",
+    "testRunner": "jest-circus/runner",
     "transform": {
       "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/config/jest/babelTransform.js",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
@@ -98,10 +98,10 @@
     ]
   },
   "dependencies": {
+    "@ant-design/icons": "^4.6.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "@ant-design/icons": "^4.6.2",
     "antd": "^4.15.5",
     "bfj": "^7.0.2",
     "camelcase": "^6.1.0",
