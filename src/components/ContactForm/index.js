@@ -1,14 +1,16 @@
 import { useState, createRef } from 'react';
 import {
-  Card, Form, Input, Button,
+  Alert, Card, Form, Input, Button,
 } from 'antd';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 const ContactForm = () => {
-  const [success, setSuccess] = useState(false);
+  const [response, setResponse] = useState(null);
   const recaptchaRef = createRef();
+  const form = createRef();
 
   const onFinish = async (values) => {
+    form.current.resetFields();
     const token = await recaptchaRef.current.executeAsync();
 
     fetch('https://formspree.io/f/mvodkbbl', {
@@ -16,17 +18,13 @@ const ContactForm = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...values, 'g-recaptcha-response': token }),
     })
-      .then((response) => response.json())
-      .then((response) => {
-        if (response.ok) setSuccess(true);
+      .then((res) => res.json())
+      .then((res) => {
+        setResponse(res);
       });
   };
 
   const onFinishError = () => {};
-
-  if (success) {
-    <div>ok</div>;
-  }
 
   return (
     <Card
@@ -34,6 +32,7 @@ const ContactForm = () => {
       bordered
     >
       <Form
+        ref={form}
         name="contact-form"
         size="large"
         labelCol={{ span: 4 }}
@@ -75,6 +74,19 @@ const ContactForm = () => {
           </Button>
         </Form.Item>
       </Form>
+      {response
+      && (
+      <Alert
+        showIcon
+        closable
+        type={response?.ok ? 'success' : 'error'}
+        message={response?.ok ? 'Thank you! The form was sent successfully.' : 'The form could not be sent, please try again.'}
+        action={(
+          <Button size="small" type="text" />
+        )}
+        onClose={setResponse(null)}
+      />
+      )}
     </Card>
   );
 };
