@@ -4,8 +4,8 @@ import {
 } from 'antd';
 import ReCAPTCHA from 'react-google-recaptcha';
 
-const CONTACT_FORM_URL = 'https://formspree.io/f/mvodkbbl';
-// const CONTACT_FORM_URL = 'https://submit-form.com/3K2B92dB';
+// const CONTACT_FORM_URL = 'https://formspree.io/f/mvodkbbl';
+const CONTACT_FORM_URL = 'https://submit-form.com/3K2B92dB';
 
 const ContactForm = () => {
   const [response, setResponse] = useState(null);
