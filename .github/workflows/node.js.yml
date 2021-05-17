@@ -32,7 +32,7 @@ jobs:
     - name: Building
       run: npm run build --if-present
     - name: Configure git credentials
-      run: OleksiyRudenko/gha-git-credentials@v2
+      uses: OleksiyRudenko/gha-git-credentials@v2
       with:
         token: '${{ secrets.GITSECRET }}'
     - name: Deploying
