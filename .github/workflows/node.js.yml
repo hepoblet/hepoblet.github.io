@@ -31,9 +31,12 @@ jobs:
       run: npm test
     - name: Building
       run: npm run build --if-present
-    - name: Configure git credentials
-      uses: OleksiyRudenko/gha-git-credentials@v2
+   - uses: oleksiyrudenko/gha-git-credentials@v2.1
       with:
+        global: true
+        name: 'hepoblet'
+        email: 'hepoblet@gmail.com'
+        actor: 'hepoblet'
         token: '${{ secrets.SUPERSECRET }}'
     - name: Deploying
       run: npm run deploy -- --branch 'gh-pages'
