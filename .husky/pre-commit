@@ -3,3 +3,4 @@
 
 npm test -- --watchAll=false
 npx lint-staged
+npx sort-package-json
