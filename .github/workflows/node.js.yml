@@ -34,6 +34,10 @@ jobs:
     - name: Configure git credentials
       uses: OleksiyRudenko/gha-git-credentials@v2
       with:
-        token: '${{ secrets.GITSECRET }}'
+        global: true
+        name: 'hepoblet'
+        email: 'hepoblet@gmail.com'
+        actor: 'hepoblet'
+        token: '${{ secrets.GH_PAGES_SECRET }}'
     - name: Deploying
       run: npm run deploy -- --branch 'gh-pages'
