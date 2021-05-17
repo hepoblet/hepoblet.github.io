@@ -4,8 +4,22 @@ import {
 } from 'antd';
 import ReCAPTCHA from 'react-google-recaptcha';
 
-// const CONTACT_FORM_URL = 'https://formspree.io/f/mvodkbbl';
-const CONTACT_FORM_URL = 'https://submit-form.com/3K2B92dB';
+const FORM_PROVIDER = 'formspark';
+
+const FORM_URL = {
+  formspree: {
+    url: 'https://formspree.io/f/mvodkbbl',
+  },
+  formspark: {
+    url: 'https://submit-form.com/3K2B92dB',
+  },
+};
+
+const INITIAL_VALUES = {
+  name: '',
+  email: '',
+  message: '',
+};
 
 const ContactForm = () => {
   const [response, setResponse] = useState(null);
@@ -20,13 +34,13 @@ const ContactForm = () => {
   const validateResponse = (res) => res?.ok || res?.name;
 
   useEffect(() => {
-    async function submitForm() {
+    const submitForm = async () => {
       const values = form.current.getFieldsValue();
 
       try {
         const token = await recaptchaRef.current.executeAsync();
 
-        fetch(CONTACT_FORM_URL, {
+        fetch(FORM_URL[FORM_PROVIDER]?.url, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -51,7 +65,7 @@ const ContactForm = () => {
         setLoading(false);
         setResponse(e);
       }
-    }
+    };
     if (loading) submitForm();
   }, [loading]);
 
@@ -67,7 +81,7 @@ const ContactForm = () => {
         labelCol={{ span: 4 }}
         wrapperCol={{ span: 20 }}
         scrollToFirstError
-        initialValues={{ name: '', email: '', message: '' }}
+        initialValues={INITIAL_VALUES}
         onFinish={onFinish}
       >
         <Form.Item
@@ -98,7 +112,7 @@ const ContactForm = () => {
         />
         <Form.Item wrapperCol={{ offset: 4, span: 20 }}>
           <Button type="primary" htmlType="submit" loading={loading}>
-            Submit
+            Send
           </Button>
         </Form.Item>
       </Form>
