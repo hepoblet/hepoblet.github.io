@@ -7223,7 +7223,7 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-lint-staged@>=10:
+lint-staged@^11.0.0:
   version "11.0.0"
   resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-11.0.0.tgz#24d0a95aa316ba28e257f5c4613369a75a10c712"
   integrity sha512-3rsRIoyaE8IphSUtO1RVTFl1e0SLBtxxUOPBtHxQgBHS5/i6nqvjcUfNioMa4BU9yGnPzbO+xkfLtXtxBpCzjw==
@@ -9752,9 +9752,9 @@ rc-tree@^4.0.0, rc-tree@~4.1.0:
     rc-virtual-list "^3.0.1"
 
 rc-trigger@^5.0.0, rc-trigger@^5.0.4, rc-trigger@^5.1.2, rc-trigger@^5.2.1:
-  version "5.2.7"
-  resolved "https://registry.yarnpkg.com/rc-trigger/-/rc-trigger-5.2.7.tgz#c6128ded1744a0b5abf9f6a3611eefa7cfa2183a"
-  integrity sha512-ttRWAd47pviWDeNDszhmuSgppmHY5aCr3y1+I6kvzS9QIlflsSC4GVjuF/eNl6F4cs7eB8B3tg7TxUCTWY7BHA==
+  version "5.2.8"
+  resolved "https://registry.yarnpkg.com/rc-trigger/-/rc-trigger-5.2.8.tgz#27c8291c24518b8f11d76c848f5424e0c429e94a"
+  integrity sha512-Tn84oGmvNBLXI+ptpzxyJx4ArKTduuB6l74ShDLhDaJaF9f5JAMizfx31L30ELVIzRr3Ze4sekG7rzwPGwVOdw==
   dependencies:
     "@babel/runtime" "^7.11.2"
     classnames "^2.2.6"
@@ -10870,9 +10870,9 @@ spdx-expression-parse@^3.0.0:
     spdx-license-ids "^3.0.0"
 
 spdx-license-ids@^3.0.0:
-  version "3.0.7"
-  resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-3.0.7.tgz#e9c18a410e5ed7e12442a549fbd8afa767038d65"
-  integrity sha512-U+MTEOO0AiDzxwFvoa4JVnMV6mZlJKk2sBLt90s7G0Gd0Mlknc7kxEn3nuDPNZRta7O2uy8oLcZLVT+4sqNZHQ==
+  version "3.0.8"
+  resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-3.0.8.tgz#eb1e97ad99b11bf3f82a3b71a0472dd9a00f2ecf"
+  integrity sha512-NDgA96EnaLSvtbM7trJj+t1LUR3pirkDCcz9nOUlPb5DMBGsH7oES6C3hs3j7R9oHEa1EMvReS/BUAIT5Tcr0g==
 
 spdy-transport@^3.0.0:
   version "3.0.0"
