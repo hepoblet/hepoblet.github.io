@@ -31,7 +31,8 @@ jobs:
       run: npm test
     - name: Building
       run: npm run build --if-present
-   - uses: oleksiyrudenko/gha-git-credentials@v2.1
+    - name: Configure git credentials
+      uses: oleksiyrudenko/gha-git-credentials@v2.1
       with:
         global: true
         name: 'hepoblet'
