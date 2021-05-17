@@ -34,6 +34,6 @@ jobs:
     - name: Configure git credentials
       uses: OleksiyRudenko/gha-git-credentials@v2
       with:
-        token: '${{ secrets.GITHUB_SECRET }}'
+        token: '${{ secrets.SUPERSECRET }}'
     - name: Deploying
       run: npm run deploy -- --branch 'gh-pages'
