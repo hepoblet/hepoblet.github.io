@@ -435,6 +435,7 @@ module.exports = function (webpackEnv) {
                     root: paths.appSrc,
                     alias: {
                       '@assets': './src/assets',
+                      '@components': './src/components',
                       '@config': './src/config',
                       '@layouts': './src/layouts',
                       '@pages': './src/pages',

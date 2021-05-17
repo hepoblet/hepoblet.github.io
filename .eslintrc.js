@@ -25,6 +25,7 @@ module.exports = {
   rules: {
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'react/jsx-props-no-spreading': 'off',
     'import/no-unresolved': [2, { commonjs: true, amd: true }],
     'import/named': 2,
     'import/namespace': 2,
@@ -44,6 +45,7 @@ module.exports = {
       alias: {
         map: [
           ['@assets', './src/assets'],
+          ['@components', './src/components'],
           ['@config', './src/config'],
           ['@layouts', './src/layouts'],
           ['@pages', './src/pages'],

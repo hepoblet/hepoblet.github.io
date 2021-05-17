@@ -57,6 +57,7 @@
     "moduleNameMapper": {
       "^react-native$": "react-native-web",
       "^@assets(.*)$": "<rootDir>/src/assets$1",
+      "^@components(.*)$": "<rootDir>/src/components$1",
       "^@config(.*)$": "<rootDir>/src/config$1",
       "^@layouts(.*)$": "<rootDir>/src/layouts$1",
       "^@pages(.*)$": "<rootDir>/src/pages$1",
@@ -139,6 +140,7 @@
     "react-app-polyfill": "^2.0.0",
     "react-dev-utils": "^11.0.3",
     "react-dom": "^17.0.2",
+    "react-google-recaptcha": "^2.1.0",
     "react-i18next": "^11.8.15",
     "react-refresh": "^0.8.3",
     "react-router-dom": "^5.2.0",
