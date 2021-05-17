@@ -4,6 +4,9 @@ import {
 } from 'antd';
 import ReCAPTCHA from 'react-google-recaptcha';
 
+// const CONTACT_FORM_URL = 'https://formspree.io/f/mvodkbbl';
+const CONTACT_FORM_URL = 'https://submit-form.com/3K2B92dB';
+
 const ContactForm = () => {
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -23,14 +26,17 @@ const ContactForm = () => {
       try {
         const token = await recaptchaRef.current.executeAsync();
 
-        fetch('https://formspree.io/f/mvodkbbl', {
+        fetch(CONTACT_FORM_URL, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
           body: JSON.stringify({ ...values, 'g-recaptcha-response': token }),
         })
           .then((res) => res.json())
           .then((res) => {
-            if (res?.ok) form.current.resetFields();
+            if (res?.ok || res?.email) form.current.resetFields();
             setResponse(res);
             setLoading(false);
           });
