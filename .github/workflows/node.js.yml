@@ -34,7 +34,6 @@ jobs:
     - name: Configure git credentials
       uses: OleksiyRudenko/gha-git-credentials@v2
       with:
-        global: true
         name: 'hepoblet'
         email: 'hepoblet@gmail.com'
         actor: 'hepoblet'
