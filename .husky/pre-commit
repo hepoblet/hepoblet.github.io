@@ -1,6 +1,6 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+npx sort-package-json
 npm test -- --watchAll=false
 npx lint-staged
-npx sort-package-json
