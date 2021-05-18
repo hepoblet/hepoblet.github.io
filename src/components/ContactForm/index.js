@@ -4,34 +4,19 @@ import {
 } from 'antd';
 import ReCAPTCHA from 'react-google-recaptcha';
 
-const FORM_PROVIDER = 'formspark';
-
-const FORM_URL = {
-  formspree: {
-    url: 'https://formspree.io/f/mvodkbbl',
-  },
-  formspark: {
-    url: 'https://submit-form.com/3K2B92dB',
-  },
-};
-
-const INITIAL_VALUES = {
-  name: '',
-  email: '',
-  message: '',
-};
+import {
+  FORM_PROVIDER, FORM_URL, INITIAL_VALUES, RECAPTCHA_SITE_KEY,
+} from './contants';
 
 const ContactForm = () => {
   const [response, setResponse] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [sendForm, setSendForm] = useState(false);
   const recaptchaRef = createRef();
   const form = createRef();
 
-  const onFinish = () => {
-    setLoading(true);
-  };
-
   const validateResponse = (res) => res?.ok || res?.name;
+
+  const onFinish = () => setSendForm(true);
 
   useEffect(() => {
     const submitForm = async () => {
@@ -50,7 +35,7 @@ const ContactForm = () => {
         })
           .then((res) => {
             if (!res?.ok) {
-              setLoading(false);
+              setSendForm(false);
               setResponse('error');
               throw new Error('Something went wrong.');
             }
@@ -58,16 +43,16 @@ const ContactForm = () => {
           })
           .then((res) => {
             if (validateResponse(res)) form.current.resetFields();
+            setSendForm(false);
             setResponse(res);
-            setLoading(false);
           });
       } catch (e) {
-        setLoading(false);
+        setSendForm(false);
         setResponse(e);
       }
     };
-    if (loading) submitForm();
-  }, [loading]);
+    if (sendForm) submitForm();
+  }, [sendForm]);
 
   return (
     <Card
@@ -108,10 +93,10 @@ const ContactForm = () => {
         <ReCAPTCHA
           ref={recaptchaRef}
           size="invisible"
-          sitekey="6Le53NcaAAAAAIjRwPKKM18-i_xzqgTc2AItuUSA"
+          sitekey={RECAPTCHA_SITE_KEY}
         />
         <Form.Item wrapperCol={{ offset: 4, span: 20 }}>
-          <Button type="primary" htmlType="submit" loading={loading}>
+          <Button type="primary" htmlType="submit" loading={sendForm}>
             Send
           </Button>
         </Form.Item>
