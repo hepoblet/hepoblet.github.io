@@ -1,7 +1,6 @@
 import { Layout, Row, Col } from 'antd';
-import { useTranslation } from 'react-i18next';
-
 import './i18n';
+import { useTranslation } from 'react-i18next';
 
 const { version } = require('../../../../../package.json');
 

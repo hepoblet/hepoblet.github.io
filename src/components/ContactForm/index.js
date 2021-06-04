@@ -3,6 +3,8 @@ import {
   Alert, Card, Form, Input, Button,
 } from 'antd';
 import ReCAPTCHA from 'react-google-recaptcha';
+import './i18n';
+import { useTranslation } from 'react-i18next';
 
 import {
   FORM_PROVIDER, FORM_URL, INITIAL_VALUES, RECAPTCHA_SITE_KEY,
@@ -13,6 +15,7 @@ const ContactForm = () => {
   const [sendForm, setSendForm] = useState(false);
   const recaptchaRef = createRef();
   const form = createRef();
+  const { t } = useTranslation('contactForm');
 
   const validateResponse = (res) => res?.ok || res?.name;
 
@@ -56,7 +59,7 @@ const ContactForm = () => {
 
   return (
     <Card
-      title="Info"
+      title={t('title')}
       bordered
     >
       <Form
@@ -70,23 +73,23 @@ const ContactForm = () => {
         onFinish={onFinish}
       >
         <Form.Item
-          label="Name"
+          label={t('name')}
           name="name"
-          rules={[{ required: true, message: 'Please input your name!' }]}
+          rules={[{ required: true, message: t('nameError') }]}
         >
           <Input />
         </Form.Item>
         <Form.Item
-          label="Email"
+          label={t('email')}
           name="email"
-          rules={[{ required: true, message: 'Please input your email!' }]}
+          rules={[{ required: true, message: t('emailError') }]}
         >
           <Input />
         </Form.Item>
         <Form.Item
-          label="Message"
+          label={t('message')}
           name="message"
-          rules={[{ required: false, message: 'Please input your message!' }]}
+          rules={[{ required: false, message: t('messageError') }]}
         >
           <Input.TextArea />
         </Form.Item>
@@ -97,7 +100,7 @@ const ContactForm = () => {
         />
         <Form.Item wrapperCol={{ offset: 4, span: 20 }}>
           <Button type="primary" htmlType="submit" loading={sendForm}>
-            Send
+            {t('send')}
           </Button>
         </Form.Item>
       </Form>
@@ -107,7 +110,7 @@ const ContactForm = () => {
         showIcon
         closable
         type={validateResponse(response) ? 'success' : 'error'}
-        message={validateResponse(response) ? 'Thank you! The form was sent successfully.' : 'The form could not be sent, please try again.'}
+        message={validateResponse(response) ? t('success') : t('failure')}
         action={(
           <Button size="small" type="text" />
         )}

@@ -11,4 +11,14 @@ i18n
     resources: [],
   });
 
+i18n.addResources('en', 'translations', {
+  title: 'Title',
+  description: 'This is a description.',
+});
+
+i18n.addResources('es', 'translations', {
+  title: 'Título',
+  description: 'Esta es una descripción.',
+});
+
 export default i18n;

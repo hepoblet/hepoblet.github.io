@@ -5,9 +5,9 @@ import {
   GithubOutlined, TranslationOutlined, HomeFilled, FormOutlined,
 } from '@ant-design/icons';
 import { Link, useLocation } from 'react-router-dom';
+import './i18n';
 import { useTranslation } from 'react-i18next';
 
-import './i18n';
 import logo from './assets/logo.svg';
 
 const Header = () => {
