@@ -14,11 +14,13 @@ i18n
 i18n.addResources('en', 'translations', {
   title: 'Title',
   description: 'This is a description.',
+  more: 'More',
 });
 
 i18n.addResources('es', 'translations', {
   title: 'Título',
   description: 'Esta es una descripción.',
+  more: 'Más',
 });
 
 export default i18n;
