@@ -13,12 +13,12 @@
 
 # Scripts
 ```
-yarn start
-yarn start:clean
-yarn build
-yarn clean
-yarn predeploy
-yarn deploy
-yarn test
-yarn prepare
+npm run start
+npm run start:clean
+npm run build
+npm run clean
+npm run predeploy
+npm run deploy
+npm run test
+npm run prepare
 ```
