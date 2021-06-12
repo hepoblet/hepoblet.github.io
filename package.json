@@ -1,11 +1,11 @@
 {
   "name": "hepoblet",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "homepage": "https://hepoblet.github.io",
   "scripts": {
     "start": "node scripts/start.js",
-    "start:clean": "npm run clean && npm install && npm start",
+    "start:clean": "npm run clean && npm install && npm run start",
     "build": "node scripts/build.js",
     "clean": "rm -rf ./build ./node_modules package-lock.json yarn.lock && npm cache clean --force && yarn cache clean",
     "predeploy": "npm run build",
@@ -127,7 +127,7 @@
     "web-vitals": "^1.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.3",
+    "@babel/core": "^7.14.5",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.3",
     "@svgr/webpack": "5.5.0",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
