@@ -14,15 +14,15 @@ describe('basic test', () => {
     matchMedia.clear();
   });
 
-  test('renders information text', () => {
+  test('renders home text', () => {
     render(<App />);
-    const textElement = screen.getAllByText(/information/i);
+    const textElement = screen.getAllByText(/home/i);
     expect(textElement[0]).toBeInTheDocument();
   });
 
-  test('renders projects text', () => {
+  test('renders contact text', () => {
     render(<App />);
-    const textElement = screen.getAllByText(/projects/i);
+    const textElement = screen.getAllByText(/contact/i);
     expect(textElement[0]).toBeInTheDocument();
   });
 });

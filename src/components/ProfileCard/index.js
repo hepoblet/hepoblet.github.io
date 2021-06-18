@@ -4,9 +4,11 @@ import './i18n';
 import { useTranslation } from 'react-i18next';
 
 import photo from '@assets/photo.jpg';
+import { profile } from '@services';
 
 const ProfileCard = () => {
   const { t } = useTranslation('profileCard');
+  const { title, description, social } = profile;
 
   return (
     <Card
@@ -20,27 +22,27 @@ const ProfileCard = () => {
         <LinkedinFilled
           key="linkedin"
           onClick={() => {
-            window.location.href = 'https://www.linkedin.com/in/hepoblet/';
+            window.location.href = social.linkedin;
           }}
         />,
         <GithubFilled
           key="github"
           onClick={() => {
-            window.location.href = 'https://github.com/hepoblet/';
+            window.location.href = social.github;
           }}
         />,
         <MailFilled
           key="email"
           onClick={() => {
-            window.location.href = 'mailto:hepoblet@gmail.com';
+            window.location.href = social.email;
           }}
         />,
       ]}
       bordered
     >
       <Card.Meta
-        title={t('metaTitle')}
-        description={t('metaDescription')}
+        title={t(`profileCard:${title}`)}
+        description={description}
       />
     </Card>
   );

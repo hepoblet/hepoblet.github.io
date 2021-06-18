@@ -1,43 +1,40 @@
 /* eslint-disable no-shadow */
 /* eslint-disable react/no-array-index-key */
-import { useState } from 'react';
-import {
-  Card, Row, Col, Empty,
-} from 'antd';
+import { Card, Row, Col } from 'antd';
 import './i18n';
 import { useTranslation } from 'react-i18next';
 
 import ProfileCard from '@components/ProfileCard';
-import {
-  personal, profile, professional, skills,
-} from '@services';
+import { personal, professional, skills } from '@services';
 
-const Content1 = () => {
-  const { t } = useTranslation(['home']);
+const Home = () => {
+  const { t } = useTranslation(['home', 'translations']);
 
   return (
-    <Row>
-      <Col span={24}>
+    <Row className="container content">
+      <Col span={24} lg={5}>
+        <ProfileCard />
+      </Col>
+      <Col span={24} lg={1} />
+      <Col span={24} lg={18}>
         <Card type="inner" title={t(`home:${personal.title}`).toUpperCase()}>
-          {personal.items.map(({ title, description }, index) => (
+          {personal.list.map(({ name, description }, index) => (
             <div key={index}>
-              <strong>{`${t(`home:${title}`)}: `}</strong>
+              <strong>{`${t(`home:${name}`)}: `}</strong>
               {description}
             </div>
           ))}
         </Card>
-        <Card type="inner" title={t(`home:${profile.title}`).toUpperCase()}>
-          <div>
-            {profile.description}
-          </div>
-        </Card>
         <Card type="inner" title={t(`home:${professional.title}`).toUpperCase()}>
-          {professional.items.map(({ title, items }, index) => (
+          {professional.jobs.map(({ title, subTitle, list }, index) => (
             <div key={index}>
-              <div><strong>{`${t(`home:${title}`)}`}</strong></div>
+              <div>
+                <strong>{title}</strong>
+                <i>{` | ${subTitle}`}</i>
+              </div>
               <div>
                 <ul>
-                  {items.map((item, index) => (
+                  {list.map((item, index) => (
                     <li key={index}>{item}</li>
                   ))}
                 </ul>
@@ -86,54 +83,6 @@ const Content1 = () => {
             <img alt="Android" src="https://img.shields.io/badge/Android-202429.svg?style=flat-square&logo=android" />
             <img alt="iOS" src="https://img.shields.io/badge/iOS-202429.svg?style=flat-square&logo=ios" />
           </p>
-        </Card>
-      </Col>
-    </Row>
-  );
-};
-
-const Content2 = () => (
-  <Row>
-    <Col span={24}>
-      <Empty description={false} />
-    </Col>
-  </Row>
-);
-
-const children = {
-  1: <Content1 />,
-  2: <Content2 />,
-};
-
-const Home = () => {
-  const [key, setKey] = useState('1');
-  const { t } = useTranslation(['home', 'translations']);
-
-  const tabs = [
-    {
-      key: '1',
-      tab: t('home:information'),
-    },
-    {
-      key: '2',
-      tab: t('home:projects'),
-    },
-  ];
-
-  return (
-    <Row className="container content">
-      <Col span={24} lg={5}>
-        <ProfileCard />
-      </Col>
-      <Col span={24} lg={1} />
-      <Col span={24} lg={18}>
-        <Card
-          tabList={tabs}
-          activeTabKey={key}
-          onTabChange={(value) => setKey(value)}
-          bordered
-        >
-          {children[key]}
         </Card>
       </Col>
     </Row>
