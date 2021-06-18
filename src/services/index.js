@@ -50,3 +50,7 @@ export const professional = {
 export const skills = {
   title: 'skills',
 };
+
+export const portfolio = {
+  title: 'portfolio',
+};

@@ -2,7 +2,7 @@ import {
   Layout, Menu, Button, Row, Col, Space,
 } from 'antd';
 import {
-  GithubOutlined, TranslationOutlined, HomeFilled, FormOutlined,
+  GithubOutlined, TranslationOutlined, HomeFilled, FolderOpenOutlined, FormOutlined,
 } from '@ant-design/icons';
 import { Link, useLocation } from 'react-router-dom';
 import './i18n';
@@ -30,6 +30,11 @@ const Header = () => {
             <Menu.Item key="/" icon={<HomeFilled />}>
               <Link to="/">
                 {t('home')}
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="/portfolio" icon={<FolderOpenOutlined />}>
+              <Link to="/portfolio">
+                {t('portfolio')}
               </Link>
             </Menu.Item>
             <Menu.Item key="/contact" icon={<FormOutlined />}>
