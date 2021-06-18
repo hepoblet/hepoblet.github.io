@@ -54,7 +54,7 @@ const Home = () => {
             <img alt="Firebase" src="https://img.shields.io/badge/Firebase-202429.svg?style=flat-square&logo=firebase" />
             <img alt="Bitrise" src="https://img.shields.io/badge/Bitrise-202429.svg?style=flat-square&logo=bitrise" />
             <img alt="JavaScript" src="https://img.shields.io/badge/Javascript-202429.svg?style=flat-square&logo=javascript" />
-            <img alt="NodeJS" src="https://img.shields.io/badge/Node.js-202429.svg?style=flat-square&logo=node-dot-js" />
+            <img alt="NodeJS" src="https://img.shields.io/badge/Node.js-202429.svg?style=flat-square&logo=node.js" />
             <img alt="npm" src="https://img.shields.io/badge/npm-202429.svg?style=flat-square&logo=npm" />
             <img alt="yarn" src="https://img.shields.io/badge/yarn-202429.svg?style=flat-square&logo=yarn" />
             <img alt="CocoaPods" src="https://img.shields.io/badge/CocoaPods-202429.svg?style=flat-square&logo=cocoapods" />
