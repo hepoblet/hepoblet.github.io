@@ -440,6 +440,7 @@ module.exports = function (webpackEnv) {
                       '@layouts': './src/layouts',
                       '@pages': './src/pages',
                       '@routes': './src/routes',
+                      '@services': './src/services',
                     },
                     extensions: ['.ios.js', '.android.js', '.js', '.json'],
                   }],

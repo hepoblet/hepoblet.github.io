@@ -50,6 +50,7 @@ module.exports = {
           ['@layouts', './src/layouts'],
           ['@pages', './src/pages'],
           ['@routes', './src/routes'],
+          ['@services', './src/services'],
         ],
         extensions: ['.ts', '.js', '.jsx', '.json'],
       },

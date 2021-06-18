@@ -1,6 +1,6 @@
 {
   "name": "hepoblet",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "homepage": "https://hepoblet.github.io",
   "scripts": {
@@ -64,6 +64,7 @@
       "^@layouts(.*)$": "<rootDir>/src/layouts$1",
       "^@pages(.*)$": "<rootDir>/src/pages$1",
       "^@routes(.*)$": "<rootDir>/src/routes$1",
+      "^@services(.*)$": "<rootDir>/src/services$1",
       "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
     },
     "modulePaths": [],
@@ -118,10 +119,8 @@
     "react-dom": "^17.0.2",
     "react-google-recaptcha": "^2.1.0",
     "react-i18next": "^11.8.15",
-    "react-markdown": "^6.0.2",
     "react-refresh": "^0.8.3",
     "react-router-dom": "^5.2.0",
-    "remark-breaks": "^2.0.2",
     "resolve": "1.18.1",
     "semver": "7.3.2",
     "web-vitals": "^1.0.1"

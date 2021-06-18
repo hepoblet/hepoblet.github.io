@@ -16,8 +16,8 @@ describe('basic test', () => {
 
   test('renders information text', () => {
     render(<App />);
-    const textElement = screen.getByText(/information/i);
-    expect(textElement).toBeInTheDocument();
+    const textElement = screen.getAllByText(/information/i);
+    expect(textElement[0]).toBeInTheDocument();
   });
 
   test('renders projects text', () => {

@@ -10,7 +10,6 @@
 * https://github.com/dozoisch/react-google-recaptcha
 * https://github.com/typicode/husky
 * https://github.com/okonet/lint-staged
-* https://github.com/remarkjs/react-markdown
 
 # Scripts
 ```
