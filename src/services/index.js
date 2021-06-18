@@ -53,4 +53,30 @@ export const skills = {
 
 export const portfolio = {
   title: 'portfolio',
+  list: [
+    {
+      key: 'join',
+      name: 'Join Fútbol',
+      description: '',
+      url: '',
+    },
+    {
+      key: 'restoq',
+      name: 'RestoQ',
+      description: '',
+      url: '',
+    },
+    {
+      key: 'capacity',
+      name: 'Capacity',
+      description: '',
+      url: '',
+    },
+    {
+      key: 'anchorio',
+      name: 'Ancho Rio',
+      description: '',
+      url: '',
+    },
+  ],
 };

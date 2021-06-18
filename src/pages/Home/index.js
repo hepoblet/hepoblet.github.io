@@ -17,7 +17,7 @@ const Home = () => {
       </Col>
       <Col span={24} lg={1} />
       <Col span={24} lg={18}>
-        <Card type="inner" title={t(`home:${personal.title}`).toUpperCase()}>
+        <Card type="inner" title={t(`home:${personal.title}`).toUpperCase()} bodyStyle={{ marginBottom: 35 }}>
           {personal.list.map(({ name, description }, index) => (
             <div key={index}>
               <strong>{`${t(`home:${name}`)}: `}</strong>
@@ -25,7 +25,7 @@ const Home = () => {
             </div>
           ))}
         </Card>
-        <Card type="inner" title={t(`home:${professional.title}`).toUpperCase()}>
+        <Card type="inner" title={t(`home:${professional.title}`).toUpperCase()} bodyStyle={{ marginBottom: 35 }}>
           {professional.jobs.map(({ title, subTitle, list }, index) => (
             <div key={index}>
               <div>
@@ -42,7 +42,7 @@ const Home = () => {
             </div>
           ))}
         </Card>
-        <Card type="inner" title={t(`home:${skills.title}`).toUpperCase()}>
+        <Card type="inner" title={t(`home:${skills.title}`).toUpperCase()} bodyStyle={{ marginBottom: 35 }}>
           <p align="center">
             <img alt="React" src="https://img.shields.io/badge/React-202429.svg?style=flat-square&logo=react" />
             <img alt="React Native" src="https://img.shields.io/badge/React_Native-202429.svg?style=flat-square&logo=react" />
